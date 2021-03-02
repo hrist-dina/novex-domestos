@@ -1,0 +1,54 @@
+mixin product(img, title, count)
+    .page-1__product
+        if count
+            .page-1__product-count x!{count}
+        .page-1__product-img
+            img(src=`img/page1/${img}.png`)
+        .page-1__product-name !{title}
+
+section#prizes.page.page-1.js-page
+    .container.container_page-1
+        .content.content__left
+            h3.title Условия
+            .page-1__text
+                ol.page-1__list
+                    li
+                        | Совершить покупку в одном из магазинов «НОВЭКС» товаров, под торговой маркой  «Colgate»,  «Palmolive»,  «Lady Speed Stick»,  «Mennen Speed Stick», на сумму более
+                        |
+                        b 259
+                        |
+                        | рублей в одном чеке.
+                    li
+                        | Получить на кассе кассовый чек, выдаваемый в момент совершения покупки, содержащий поздравительный текст и информацию о регистрации уникального кода для участия в розыгрыше.
+                    li
+                        | Подтвердить свое желание участвовать в розыгрыше, заполнив регистрацию  на сайте colgate.novex.ru и ждать подведения розыгрыша.
+            a(href='#register').button.button--small.page-1__button.js-scroll-link Зарегистрироваться
+        .content.content__right
+            .page-1__prizes
+                h3.title Призы
+                .page-1__product-list
+                    .page-1__product-row
+                        +product(
+                            'watch',
+                            'Смарт-часы Apple Watch S6',
+                            6
+                        )
+                        +product(
+                            'ps5',
+                            'Игровая приставка Sony PlayStation 5'
+                        )
+                    .page-1__product-row
+                        +product(
+                            'quadcopter',
+                            'Квадрокоптер R-Wings'
+                        )
+                        +product(
+                            'iphone',
+                            'Смартфон Apple iPhone&nbsp;11'
+                        )
+                        +product(
+                            'scooter',
+                            'Электросамокат'
+                        )
+
+

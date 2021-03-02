@@ -1,0 +1,166 @@
+.menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 50%;
+  left: 0;
+  z-index: 1000;
+  background: #007AC9;
+  -moz-transition: left 0.3s ease;
+  -webkit-transition: left 0.3s ease;
+  transition: left 0.3s ease;
+  padding-left: 10vw;
+
+}
+
+.menu.is-hide {
+  right: 100%;
+  left: -100%;
+}
+
+.menu.is-show {
+  left: 0;
+  right: 49%;
+  @include lg-block {
+    width: 100%;
+  }
+}
+
+.menu__close {
+  width: 29px;
+  height: 29px;
+  position: absolute;
+  top:  6.95vh;
+  left: 2.91vw;
+  cursor: pointer;
+  background-size: contain;
+  opacity: 0;
+  -moz-transition: opacity 0.3s ease;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  -moz-transition-delay: 0.3s;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+
+  @include lg-block {
+    top: 20px;
+    left: 20px;
+  }
+}
+
+@media (min-aspect-ratio: 3/2) and (orientation: landscape) {
+  //.menu__close {
+  //  width: 29px;
+  //  height: 40px;
+  //}
+}
+
+.menu.is-show .menu__close {
+  opacity: 1;
+}
+
+.menu__list {
+  position: absolute;
+  top: 50%;
+  -moz-transform: translate(0, -50%); /* Для Firefox */
+  -ms-transform: translate(0, -50%); /* Для IE */
+  -webkit-transform: translate(0, -50%); /* Для Safari, Chrome, iOS */
+  -o-transform: translate(0, -50%); /* Для Opera */
+  transform: translate(0, -50%);
+}
+
+.menu__item {
+  list-style: none;
+  margin-bottom: 30px;
+
+  @include md-block {
+    margin-bottom: 20px;
+  }
+}
+
+.menu__item.active .menu__link {
+  color: #fff;
+  font-size: 40px;
+  line-height: 50px;
+
+  @include lg-block {
+    font-size: 35px;
+    line-height: 45px;
+  }
+}
+
+.menu__item.active {
+  margin-top: 38px;
+  margin-bottom: 38px;
+
+  @include lg-block {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.menu .menu__link {
+  border-bottom: none;
+  position: relative;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 35px;
+  color: #CAE3ED;
+  border-bottom: none;
+  text-decoration: none;
+  cursor:pointer;
+
+  @include lg-block {
+    font-size: 28px;
+    line-height: 40px;
+  }
+
+  @include sm-block {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+.menu .menu__link:hover {
+  color: #fff;
+}
+
+.menu .menu__link:hover:before {
+  content: '';
+  position: absolute;
+  left: -49px;
+  top: 40%;
+  width: 28px;
+  height: 3px;
+  background: #fff;
+}
+
+@media (min-aspect-ratio: 3/2) and (orientation: landscape) {
+  .menu .menu__link {
+  }
+}
+
+.menu-panel {
+  position: fixed;
+  left: 2.34375vw  /* 45/19.2 */;
+  top: 4.57vh  /* 45/9.85 */;
+  z-index: 999;
+
+  @include lg-block {
+    top: 20px;
+    left: 20px;
+  }
+
+  &__icon {
+    position: absolute;
+    width: 40px;
+    height: 26px;
+    cursor: pointer;
+  }
+
+  &.colored &__icon svg path {
+    fill: #E780A5;
+    transition: ease-in-out .3s;
+  }
+}

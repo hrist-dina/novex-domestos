@@ -1,0 +1,102 @@
+-
+    const getItem = (day, month, name, city, prize, year = 2020) =>
+            ({day, month, name, city, prize, year})
+    let winners = [
+        getItem(
+            14,
+            'дек',
+            'Марина Александрова',
+            'г. Камень-на-Оби',
+            'watch'
+        ),
+        getItem(
+            14,
+            'дек',
+            'Ольга Егорова',
+            'г. Барнаул',
+            'watch'
+        ),
+        getItem(
+            14,
+            'дек',
+            'Игорь Лиховец',
+            'г. Новоалтайск',
+            'watch'
+        ),
+        getItem(
+            14,
+            'дек',
+            'Елена Тимонина',
+            'г. Барнаул',
+            'watch'
+        ),
+        getItem(
+            14,
+            'дек',
+            'Сергей Пузь',
+            'г. Барнаул',
+            'watch'
+        ),
+        getItem(
+            14,
+            'дек',
+            'Севда Аламбаева',
+            'г. Камень-на-Оби',
+            'watch'
+        ),
+        getItem(
+            11,
+            'янв',
+            'Нателла Крапивина',
+            'г. Барнаул',
+            'iphone',
+            2021
+        ),
+        getItem(
+            11,
+            'янв',
+            'Петр Суворов',
+            'г. Рубцовск',
+            'ps5',
+            2021
+        ),
+        getItem(
+            11,
+            'янв',
+            'Надежда Васильева',
+            'г. Камень-на-Оби',
+            'quadcopter',
+            2021
+        ),
+        getItem(
+            11,
+            'янв',
+            'Максим Титов',
+            'г. Барнаул',
+            'scooter',
+            2021
+        )
+    ];
+
+section#winners.page.page-4.js-page.js-winners
+    .container.container_winners.page__right.container_page-4
+        .content.content__full.js-winners-content
+            h3.title.page-4__title
+                | Победители
+            .raffle-card__list.js-slider-container
+                for card in winners
+                    .raffle-card
+                        .raffle-card-inner
+                            .raffle-card__date
+                                | #{card.day} #{card.month} #{card.year}
+                            .raffle-card__content
+                                .raffle-card__content-inner
+                                    .raffle-card__name=card.name
+                                    .raffle-card__city=card.city
+                                    .raffle-card__number +7 952 *****71
+                                .raffle-card__prize
+                                    .raffle-card__prize-img
+                                        img(src=`img/page1/${card.prize}.png`)
+
+            .copyright
+                | © 2020 Новэкс. Все права защищены

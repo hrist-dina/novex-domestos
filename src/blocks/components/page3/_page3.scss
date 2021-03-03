@@ -4,67 +4,49 @@
     position: relative;
     width: 100%;
     display: flex;
-    @include lg-block {
-      flex-direction: column;
-    }
+    flex-direction: column;
   }
 
-  & .content__left {
-    width: 50vw;
+  & .content__top {
+    width: 100%;
     margin: 0;
-    padding-top: 10.4vh;
+    padding-top: 9vh;
 
     @include lg-block {
-      padding-top: 40px;
+      padding-top: 24px;
       width: 100%;
       height: auto;
     }
   }
 
-  & .content__right {
-    overflow: initial;
-    width: 50vw;
-    margin: 0;
-    z-index: 1;
-    padding-top: 23.65vh  /* 233/9.85 */;
-    padding-left: 6.771vw  /* 130/19.2 */;
-    padding-right: 8.75vw  /* 168/19.2 */;
-
+  & .content__bottom {
     @include lg-block {
-      width: 100%;
-      position: relative;
-      height: 70vh;
-      padding: 40px;
+      padding-top: 24px;
     }
-    @include sm-block {
-      height: 50vh;
-    }
+    padding-top: 5vh;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 24px;
   }
 
-
   &__title {
-    font-weight: 800;
-    letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #fff;
   }
 
   &__text {
-    max-width: 34.89vw;
-    margin-top: 4.4vh;
-    margin-bottom: 5.7vh;
-    font-family: Geometria, sans-serif;
-    font-style: normal;
+    margin-top: 6.4vh;
+    margin-bottom: 6.4vh;
     font-weight: 500;
-    font-size: 1.79vh;
-    line-height: 2.69vh;
+    font-size: 24px;
+    line-height: 130%;
     color: #fff;
+
     @include lg-block {
-      max-width: 670px;
       font-size: 16px;
       line-height: 24px;
-      margin-top: 32px;
-      margin-bottom: 36px;
+      margin-top: 24px;
+      margin-bottom: 24px;
     }
 
     & a {
@@ -78,11 +60,54 @@
   &__buttons {
     display: flex;
     align-items: flex-start;
+    justify-content: center;
     @include sm-block {
       flex-direction: column;
       & .button {
         margin-right: 0;
       }
+    }
+  }
+
+  &__step-list {
+    @include row-flex;
+    justify-content: center;
+  }
+
+  &__step {
+    @include col;
+    @include size(4);
+    @include size-lg(6);
+    @include size-md(12);
+    @include xl-block {
+      font-size: 24px;
+    }
+    @include lg-block {
+      font-size: 20px;
+    }
+    @include md-block {
+      font-size: 16px;
+      height: 100px;
+    }
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 140px;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 130%;
+    text-align: center;
+    color: #fff;
+    background: url("../img/page3/step.png") no-repeat center;
+    background-size: contain;
+    margin-bottom: 20px;
+
+    &-text {
+      max-width: 80%;
+      margin: auto;
+      padding: 20px;
+      box-sizing: border-box;
+      word-break: break-word;
     }
   }
 

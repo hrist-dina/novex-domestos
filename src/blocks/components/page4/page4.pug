@@ -83,12 +83,10 @@ section#winners.page.page-4.js-page.js-winners
         .content.content__full.js-winners-content
             h3.title.page-4__title
                 | Победители
-            .raffle-card__list.js-slider-container
+            ol.raffle-card__list.js-slider-container
                 for card in winners
-                    .raffle-card
+                    li.raffle-card
                         .raffle-card-inner
-                            .raffle-card__date
-                                | #{card.day} #{card.month} #{card.year}
                             .raffle-card__content
                                 .raffle-card__content-inner
                                     .raffle-card__name=card.name
@@ -96,7 +94,19 @@ section#winners.page.page-4.js-page.js-winners
                                     .raffle-card__number +7 952 *****71
                                 .raffle-card__prize
                                     .raffle-card__prize-img
-                                        img(src=`img/page1/${card.prize}.png`)
+                                        img(src=`img/page4/card.png`)
+            ol.raffle-card__list.blue
+                for card in winners.slice(0, 2)
+                    li.raffle-card
+                        .raffle-card-inner
+                            .raffle-card__content
+                                .raffle-card__content-inner
+                                    .raffle-card__name=card.name
+                                    .raffle-card__city=card.city
+                                    .raffle-card__number +7 952 *****71
+                                .raffle-card__prize
+                                    .raffle-card__prize-img
+                                        img(src=`img/page4/robot.png`)
 
             .copyright
-                | © 2020 Новэкс. Все права защищены
+                | © 2021 Новэкс. Все права защищены

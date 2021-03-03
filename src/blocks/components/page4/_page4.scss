@@ -1,6 +1,20 @@
 .page-4 {
     height: auto;
     overflow: inherit;
+
+    &:after {
+        @include lg-block {
+            content: none;
+        }
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50px;
+        width: 170px;
+        height: 203px;
+        background: url("../img/page1/decor.png") no-repeat center;
+    }
+
     & .container {
         width: 100%;
         height: 100%;
@@ -9,16 +23,6 @@
         overflow: hidden;
         z-index: 2;
 
-        &:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
         @include lg-block {
             flex-direction: column;
         }
@@ -30,28 +34,31 @@
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        padding-top: 10.4vh;
-        padding-bottom: 6.8vh  /* 67/9.85 */;
+        padding-top: 9vh;
+        padding-bottom: 2.8vh;
         z-index: 2;
         @include lg-block {
             min-height: auto;
-            padding-top: 40px;
-            padding-bottom: 40px;
+            padding-top: 24px;
+            padding-bottom: 24px;
         }
     }
 
     &__title {
-        margin-bottom: 7.8vh;
+        @include lg-block {
+            margin-bottom: 24px;
+        }
+        margin-bottom: 6.4vh;
     }
 }
 
 
 .copyright {
     text-align: center;
-    font-size: 1.52vh  /* 15/9.85 */;
-    line-height: 2.13vh  /* 21/9.85 */;
-    color: #fff;
-    margin-top: 8.1vh;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 130%;
+    margin-top: 6.2vh;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -59,30 +66,39 @@
     @include lg-block {
         font-size: 15px;
         line-height: 21px;
-        margin-top: 80px;
+        margin-top: 48px;
     }
     @include md-block {
         font-size: 13px;
         line-height: 19px;
-        margin-top: 40px;
+        margin-top: 32px;
     }
 }
 
 .raffle {
     &-card {
         @include u-col(24px);
-        @include u-size(5, 10, 24px);
-        @include size-xl(10);
-        background: #fff;
+        @include u-size(6, 12, 24px);
+        @include xl-block {
+            @include u-size(12, 12, 24px);
+        }
+        background: linear-gradient(90deg, #C4E191 0%, #FAFCFD 100%);
         box-sizing: border-box;
-        margin-bottom: 24px;
-        border-radius: 20px;
+        margin-bottom: 16px;
 
         @include lg-block {
-            margin: 0 0 24px 0;
+            margin: 0 0 16px 0;
         }
         @include sm-block {
-            margin-bottom: 16px;
+            margin-bottom: 12px;
+        }
+
+        .blue & {
+            @include lg-block {
+                margin-left: 12px;
+                margin-right: 12px;
+            }
+            background: #7ACBE8;
         }
 
         &-inner {
@@ -97,63 +113,45 @@
 
         &__list {
             @include row-flex();
-        }
+            @include xl-block {
+                flex-direction: row;
+                margin: 0 -8px;
+                max-height: initial;
+            }
+            flex-direction: column;
+            padding: 0;
+            text-align: left;
+            list-style: none;
+            counter-reset: counter;
+            max-height: 700px;
+            margin-bottom: 0;
+            margin-top: 0;
 
-        &__date {
-            width: 100%;
-            max-width: 8.33vw;
-            height: 2.8125vw;
-            padding: 1.8vh 0 1.35vh;
-            box-sizing: border-box;
-            position: absolute;
-            bottom: 0;
-            left: -2.8125vw;
-            right: auto;
-            top: 0;
-            margin: auto;
-            transform: rotate(270deg);
-            font-style: normal;
-            font-weight: bold;
-            font-size: 1.59vh;
-            line-height: 2.19vh;
-            text-align: center;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            color: #007AC9;
-            white-space: nowrap;
-            @include lg-block {
-                max-width: 160px;
-                height: 54px;
-                padding: 18px 0 14px;
-                left: -54px;
-                font-size: 14px;
-                line-height: 22px;
+            & + & {
+                @include lg-block {
+                    margin-top: 24px;
+                }
+                margin-top: 64px;
+            }
+
+            &.blue {
+                flex-direction: row;
             }
         }
 
         &__content {
-            width: #{calc(100% - 2.8125vw)};
-            padding: 20px 23px 20px 27px;
+            width: 100%;
+            height: 106px;
+            padding: 12px 15px 12px 25px;
             box-sizing: border-box;
             display: flex;
             align-items: center;
             justify-content: space-between;
             position: relative;
-            &:before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 2px;
-                height: 100%;
-                background: url(icon-card-sip()) space round;
-            }
-            @include lg-block {
-                border-left: 54px transparent solid;
-                width: 100%;
-            }
+            counter-increment: counter;
             @include sm-block {
-                padding: 12px 18px 12px 20px;
+                padding: 10px 12px 10px 20px;
+                height: auto;
             }
 
             @include to(360px) {
@@ -162,18 +160,45 @@
                 align-items: flex-start;
             }
 
+            &:before {
+                @include lg-block {
+                    font-size: 100px;
+                }
+                @include md-block {
+                    font-size: 60px;
+                    -webkit-text-stroke-width: 2px;
+                }
+                content: counter(counter);
+                position: relative;
+                left: 0;
+                top: 0;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 80px;
+                line-height: 80%;
+                text-align: right;
+                -webkit-text-stroke-width: 4px;
+                -webkit-text-stroke-color: #D2E8A8;
+                font-feature-settings: 'tnum' on, 'lnum' on;
+                color: transparent;
+                margin-right: 16px;
+
+                .blue & {
+                    -webkit-text-stroke-color: #95D5EE;
+                }
+            }
 
             &-inner {
                 padding-right: 10px;
                 box-sizing: border-box;
-                width: #{'calc(100% - 180px)'};
+                width: #{'calc(100% - 220px)'};
 
                 @include notebook {
-                    width: #{'calc(100% - 150px)'};
+                    width: #{'calc(100% - 180px)'};
                 }
 
                 @include sm-block {
-                    width: #{'calc(100% - 100px)'};
+                    width: #{'calc(100% - 120px)'};
                 }
                 @include to(360px) {
                     width: 100%;
@@ -186,13 +211,9 @@
         &__name {
             font-style: normal;
             font-weight: 500;
-            font-size: 2.39vh;
-            line-height: 3.19vh;
+            font-size: 24px;
+            line-height: 32px;
             color: #242424;
-            @include lg-block {
-                font-size: 24px;
-                line-height: 32px;
-            }
             @include md-block {
                 font-size: 20px;
                 line-height: 28px;
@@ -206,19 +227,14 @@
         &__city {
             font-style: normal;
             font-weight: 400;
-            font-size: 1.59vh;
-            line-height: 2.19vh;
+            font-size: 16px;
+            line-height: 22px;
             color: #676767;
-            margin-top: 0.79vh;
-            @include lg-block {
-                font-size: 16px;
-                line-height: 22px;
-                margin-top: 8px;
-            }
+            margin-top: 6px;
             @include md-block {
                 font-size: 14px;
                 line-height: 20px;
-                margin-top: 6px;
+                margin-top: 4px;
             }
             @include md-block {
                 font-size: 13px;
@@ -229,19 +245,14 @@
         &__number {
             font-style: normal;
             font-weight: 400;
-            font-size: 1.99vh;
-            line-height: 2.79vh;
+            font-size: 20px;
+            line-height: 28px;
             color: #676767;
-            margin-top: 0.79vh;
-            @include lg-block {
-                font-size: 20px;
-                line-height: 28px;
-                margin-top: 8px;
-            }
+            margin-top: 6px;
             @include md-block {
                 font-size: 18px;
                 line-height: 24px;
-                margin-top: 6px;
+                margin-top: 4px;
             }
             @include sm-block {
                 font-size: 16px;
@@ -254,25 +265,33 @@
                 width: 100px;
                 height: 100px;
             }
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: #FF4F73;
             display: flex;
             align-items: center;
             justify-content: center;
 
             &-img {
                 @include lg-block {
-                    width: 70px;
+                    width: 100px;
                     height: 70px;
                 }
-                width: 80px;
+                width: 126px;
                 height: 80px;
+                text-align: right;
                 & img {
                     max-width: 100%;
-                    max-height: 100%;
                     margin: auto;
+                }
+
+                .blue & {
+                    @include xl-block {
+                        width: 126px;
+                        height: 80px;
+                        & img {
+                            max-height: 100%;
+                        }
+                    }
+                    width: 154px;
+                    height: 134px;
                 }
             }
         }

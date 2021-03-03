@@ -1,0 +1,17 @@
+-
+    const getImgPath = img => `img/page1/${img}.png`
+    const getProduct = (img, count, title, subtitle) => (
+        {img: getImgPath(img), count: getImgPath(count), title, subtitle}
+    )
+    const products = {
+        'card': getProduct(
+            'card', 10,
+            '3&nbsp;000&nbsp;₽',
+            'подарочные сертификаты'
+        ),
+        'robot': getProduct(
+            'robot', 2,
+            'РОБОТ-ПЫЛЕСОС',
+            'Xiaomi Mi Robot Vacuum -&nbsp;Mop Pro'
+        )
+    }

@@ -157,25 +157,5 @@ export class MainPageCntl {
     }
 
     initParallax() {
-        new Parallax(
-            '.js-parallax-page-0',
-            '.js-parallax-bg',
-            50
-        );
-        new Parallax(
-            '.js-parallax-page-2',
-            '.js-parallax-bg-2',
-            50
-        );
-        // new Parallax(
-        //     '.js-parallax-page-0',
-        //     '.js-parallax-balloon-29-year',
-        //     50
-        // );
-        // new Parallax(
-        //     '.js-parallax-page-2',
-        //     '.js-parallax-balloons',
-        //     50
-        // );
     }
 }

@@ -111,7 +111,7 @@
   }
 
   &__draw {
-    @include md-block {
+    @include lg-block {
       font-size: 42px;
       margin-bottom: 32px;
       white-space: initial;
@@ -161,7 +161,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 2.83vh;
+    padding-top: 2.58vh;
     padding-bottom: 1.13vh;
     background: #0088C4;
     @include lg-block {
@@ -181,8 +181,8 @@
     margin-top: 7.26vh;
     @include lg-block {
       margin-top: 0;
-      padding-top: 15px;
-      padding-bottom: 15px;
+      padding-top: 24px;
+      padding-bottom: 24px;
     }
   }
 
@@ -205,6 +205,7 @@
     max-height: 75vh;
     align-items: center;
     @include lg-block {
+      max-height: initial;
       box-sizing: border-box;
     }
   }

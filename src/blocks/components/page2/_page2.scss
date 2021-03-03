@@ -1,8 +1,6 @@
 .page-2 {
 
   &__title {
-    font-style: normal;
-    letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #fff;
     @include lg-block {
@@ -15,20 +13,14 @@
   }
 
   &__check {
-    position: absolute;
-    top: auto;
-    bottom: -12vh;
-    left: 0;
-    right: auto;
-    margin: auto;
-    width: 100%;
-    height: 69.24vh  /* 682/9.85 */;
-    z-index: 1;
+    margin-top: 50px;
+    height: 58vh;
+    text-align: left;
+
     & img {
       display: inherit;
-      max-width: 549px;
+      max-width: 100%;
       max-height: 100%;
-      margin: auto;
 
       @include to(1400px) {
         margin: auto;
@@ -77,77 +69,57 @@
     position: relative;
     overflow: hidden;
 
-    &:before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: #{calc(100vh * 5)};
-      top: #{calc(100vh * -2)} ;
-      z-index: 0;
-    }
     @include lg-block {
       flex-direction: column;
+    }
+
+    &:after {
+      @include lg-block {
+        content: none;
+      }
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 50px;
+      background: url("../img/page2/decor.png") no-repeat center;
+      background-size: contain;
+      width: 202px;
+      height: 20vh;
     }
   }
 
   & .content__left {
     position: relative;
-    width: 50vw;
+    width: 50%;
     margin: 0;
-    padding-top: 10.4vh;
+    padding-top: 9.6vh;
     @include lg-block {
       width: 100%;
       overflow: hidden;
-      padding-top: 40px;
+      padding-top: 24px;
+      padding-bottom: 24px;
     }
   }
 
   & .content__right {
     position: relative;
-    width: 50vw;
+    width: 50%;
     margin: 0;
     z-index: 1;
-    padding-left: 6.771vw  /* 130/19.2 */;
-    padding-right: 8.75vw  /* 168/19.2 */;
+    padding-top: 9.6vh;
     @include lg-block {
       width: 100%;
       overflow: hidden;
-      background: #fff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-
-    &:before {
-      content: '';
-      position: absolute;
-      left: -0.52vw;
-      background: #fff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
-      border-radius: 40px;
-      transform: rotate(8.4deg);
-      width: 53.48vw;
-      height: 114.98vh;
-      @include lg-block {
-        content: none;
-      }
+      padding-top: 24px;
+      padding-bottom: 24px;
     }
   }
 
   & .block-vertical-center {
-
     @include lg-block {
       transform: none;
       top: 0;
     }
-  }
-
-  &__decor {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    z-index: -1;
   }
 }
 
@@ -178,7 +150,7 @@
 .ticket-form__elem-title {
   white-space: nowrap;
   position: absolute;
-  top: 2.09vh;
+  top: 1.8vh;
   left: 0;
   color: #5a6555;
   font-family: Geometria, sans-serif;
@@ -207,22 +179,26 @@
 
 .ticket-form__elem input {
   outline: none;
-  border: none;
   background-color: #fff;
-  font-family: Geometria, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 1.79vh;
   line-height: 2.39vh;
   color: #443E3E;
   box-sizing: border-box;
-  height: 6.39vh;
+  height: 6vh;
   padding: 0.59vh 1.25vw 0;
   width: 100%;
+  border-radius: 0;
+  border: 2px solid #A8CF64;
   -moz-transition: border 0.3s ease;
   -webkit-transition: border 0.3s ease;
   transition: border 0.3s ease;
-  border-radius: 6px;
+  @include outline-none;
+
+  &:focus {
+    border-color: #A8CF64;
+  }
 
   @include lg-block {
     height: 50px;
@@ -240,8 +216,9 @@
 
 .ticket-form__verification {
   margin-left: 24px;
-  font-size: 1.62vh  /* 16/9.85 */;
-  line-height: 2.44vh  /* 24/9.85 */;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
   color: #fff;
   width: #{calc(100% - 18.48vw)};
 
@@ -282,12 +259,10 @@
   width: #{calc(100% - 50px)};
   display: inline-block;
   vertical-align: top;
-  font-family: Geometria, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size:  1.49vh;
-  line-height: 1.99vh;
-  color: #757070;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  color: #fff;
   @include lg-block {
     font-size: 15px;
     line-height: 20px;
@@ -296,22 +271,18 @@
 
 .ticket-form__verification-text a {
   border: none;
-  color: #757070;
+  color: #fff;
   border-bottom: 1px solid transparent;
   text-decoration: none;
 }
 
 .ticket-form__verification-text a:hover {
-  border-bottom: 1px solid #757070;
+  border-bottom: 1px solid #fff;
 }
 
 .ticket-form__elem.error input {
   color: #ED395E;
   border-color: #ED395E;
-}
-
-.ticket-form__elem.active input {
-  border-color: #569b28;
 }
 
 .ticket-form__elem.active {
@@ -469,16 +440,16 @@
   vertical-align: top;
   width: 24px;
   height: 24px;
-  border-radius: 4px;
-  border: 2px solid #007AC9;
+  border: 2px solid #fff;
+  background: transparent;
   display: inline-block;
   cursor: pointer;
   box-sizing: border-box;
 
-  background: #fff;
   .checkbox-hide:checked + & {
     background-image: url(icon-check());
-    background-color: #007AC9;
+    background-color: #8FC043;
+    border-color: #8FC043;
     background-repeat: no-repeat;
     background-position: center;
   }

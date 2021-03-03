@@ -144,7 +144,7 @@
 .menu-panel {
   position: fixed;
   left: 2.34375vw  /* 45/19.2 */;
-  top: 4.57vh  /* 45/9.85 */;
+  top: 3.57vh;
   z-index: 999;
 
   @include lg-block {

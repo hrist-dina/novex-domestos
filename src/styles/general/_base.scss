@@ -47,31 +47,17 @@ h1, h2, h3, h4, h5, h6, ul {
 	width: 100%;
 	height: 100%;
 	box-sizing: border-box;
+	max-width: 1260px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 .content {
-	padding: 4.4vh 6.25vw;
 	max-width: 1560px;
 	margin: 0 auto;
 	box-sizing: border-box;
-
-	@include lg-block {
-		padding: 40px 15px;
-	}
-
-	&__text {
-		font-size: 18px;
-		line-height: 30px;
-		max-width: 585px;
-		color: #ffffff;
-		font-weight: normal;
-		font-style: normal;
-		margin: 5.08vh  /* 50/9.85 */ 0;
-	}
-
-	&__left {
-		padding-left: 6.25vw  /* 120/19.2 */;
-	}
 
 	&__title {
 		position: relative;
@@ -98,6 +84,7 @@ h1, h2, h3, h4, h5, h6, ul {
 			background-color: #fff;
 		}
 	}
+
 	&__vertical-half {
 		height: 50%;
 	}
@@ -144,7 +131,6 @@ h1, h2, h3, h4, h5, h6, ul {
 	text-indent: -6000px;
 
 	@include lg-block {
-		margin-top: 20px;
 		width: #{calc(100% - 40px)};
 		left: 0;
 		flex-direction: column;
@@ -153,38 +139,36 @@ h1, h2, h3, h4, h5, h6, ul {
 		padding-right: 20px;
 	}
 
-	@include md-block {
-		margin-top: 10px;
-	}
-
 	&-en {
 		display: inline-block;
 		background: url("../img/page0/logo-en.svg") no-repeat center;
-		width: 356px;
-		height: 75px;
+		width: 268px;
+		height: 58px;
 		background-size: contain;
 		@include lg-block {
-			max-width: 356px;
+			max-width: 200px;
+			height: 40px;
 			width: 100%;
 		}
 		@include md-block {
-			max-width: 250px;
+			max-width: 170px;
+			height: 36px;
 		}
 	}
 
 	&-sip {
 		display: inline-block;
-		width: 25px;
-		height: 25px;
-		margin: 18px 20px auto;
+		height: 19px;
+		width: 19px;
+		margin: 15px 20px auto;
 		background: #fff;
 		border-radius: 50%;
 		@include lg-block {
 			margin-bottom: 18px;
 		}
 		@include md-block {
-			width: 18px;
-			height: 18px;
+			width: 16px;
+			height: 16px;
 			margin-top: 10px;
 			margin-bottom: 10px;
 		}
@@ -193,15 +177,17 @@ h1, h2, h3, h4, h5, h6, ul {
 	&-ru {
 		display: inline-block;
 		background: url("../img/page0/logo-ru.svg") no-repeat center;
-		width: 399px;
-		height: 64px;
+		height: 48px;
+		width: 300px;
 		background-size: contain;
 		@include lg-block {
-			max-width: 399px;
+			max-width: 200px;
 			width: 100%;
+			height: 40px;
 		}
 		@include md-block {
-			max-width: 250px;
+			max-width: 170px;
+			height: 36px;
 		}
 	}
 }
@@ -212,6 +198,7 @@ h1, h2, h3, h4, h5, h6, ul {
 	width: 100%;
 	position: absolute;
 	@include transition(1s, ease);
+	background: #00A3D4;
 
 	@include lg-block {
 		height: auto;
@@ -267,7 +254,6 @@ h1, h2, h3, h4, h5, h6, ul {
 	z-index: 0;
 	bottom: 0;
 }
-
 
 .page-4 {
 	top: 100%;
@@ -325,23 +311,22 @@ h1, h2, h3, h4, h5, h6, ul {
 	justify-content: center;
 	align-items: center;
 	padding: 2.99vh 3.33vw 2.79vh;
-	background: linear-gradient(180deg, #FF4F73 0%, #F23B60 100%);
-	border: 4px solid rgba(247, 159, 191, 0.2);
-	box-shadow: 0 30px 120px rgba(255, 183, 198, 0.8);
-	border-radius: 12px;
+	background: #8FC043;
+	border: 1px solid;
+	border-image-source: linear-gradient(95.76deg, #FFFFFF 7.94%, rgba(243, 243, 243, 0) 34.4%);
 	box-sizing: border-box;
 	font-style: normal;
-	font-weight: bold;
-	font-size: 1.99vh;
-	line-height: 2.39vh;
-	text-align: center;
-	letter-spacing: 0.05em;
+	font-weight: 500;
+	font-size: 2.27vh;
+	line-height: 100%;
 	text-transform: uppercase;
 	color: #fff;
 	text-decoration: none;
 	cursor: pointer;
 	outline: none;
+	overflow: hidden;
 	@include transition();
+	z-index: 1;
 
 	@include lg-block {
 		padding: 20px 44px;
@@ -349,9 +334,8 @@ h1, h2, h3, h4, h5, h6, ul {
 		line-height: 21px;
 	}
 
-	&:not(:disabled):hover {
-		box-shadow: 0 20px 80px rgba(242, 59, 96, .8);
-		background: linear-gradient(180deg, #f23b60 0%, #f90539 100%);
+	&:not(:disabled):hover::before {
+		bottom: 5.72vh;
 	}
 
 	&:active {
@@ -363,18 +347,35 @@ h1, h2, h3, h4, h5, h6, ul {
 		cursor: not-allowed;
 	}
 
+	&:before {
+		@include transition();
+		content: '';
+		position: absolute;
+		top: auto;
+		bottom: 2.72vh;
+		left: auto;
+		right: auto;
+		margin: auto;
+		height: 2345px;
+		width: 1704px;
+		border-radius: 50%;
+		background: #A8CF63;
+		z-index: 0;
+	}
+
+	&__text {
+		position: relative;
+		z-index: 1;
+	}
+
 	&--small {
 		padding: 2.19vh 2.7vw 1.99vh;
-		background: linear-gradient(180deg, #FF4F73 0%, #F23B60 100%);
-		border-radius: 12px;
 		box-shadow: none;
 		border: none;
 		font-style: normal;
 		font-weight: bold;
 		font-size: 1.59vh;
 		line-height: 2.19vh;
-		letter-spacing: 0.05em;
-		text-transform: uppercase;
 		color: #fff;
 		@include lg-block {
 			font-size: 14px;
@@ -387,15 +388,10 @@ h1, h2, h3, h4, h5, h6, ul {
 		max-width: 17.29vw;
 		width: 100%;
 		padding: 3.39vh 1.66vw;
-		background: linear-gradient(180deg, #FF4F73 0%, #F23B60 100%);
-		border-radius: 12px;
-		font-family: Geometria, sans-serif;
 		font-style: normal;
 		font-weight: bold;
 		font-size: 1.59vh;
 		line-height: 2.19vh;
-		letter-spacing: 0.05em;
-		text-transform: uppercase;
 		color: #fff;
 		border: none;
 		box-shadow: none;

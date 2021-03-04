@@ -234,6 +234,9 @@
     @include lg-block {
       padding: 40px 15px;
     }
+    @include md-block {
+      padding-bottom: 24px;
+    }
 
     & .title {
       text-align: center;

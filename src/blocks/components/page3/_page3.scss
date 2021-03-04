@@ -88,6 +88,9 @@
     @include md-block {
       font-size: 16px;
       height: 100px;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
     display: inline-flex;
     align-items: center;
@@ -103,7 +106,7 @@
     margin-bottom: 20px;
 
     &-text {
-      max-width: 80%;
+      max-width: 250px;
       margin: auto;
       padding: 20px;
       box-sizing: border-box;

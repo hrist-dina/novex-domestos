@@ -24,6 +24,9 @@
   }
 
   &__products {
+    @include lg-block {
+      height: 400px;
+    }
     height: 100%;
     & img {
       max-width: 100%;
@@ -41,38 +44,56 @@
     display: inline-block;
     width: auto;
     font-weight: 500;
-    font-size: 3.51vh;
+    font-size: 3.1vh;
     line-height: .8;
     color: #fff;
-    padding: 2.83vh 25px;
+    padding: 1.7vh 25px;
     background: #F45576;
-    margin-bottom: 7.26vh;
+    margin-bottom: 4vh;
   }
 
   &__buy {
     @include md-block {
       font-size: 50px;
-      margin-bottom: 32px;
+      margin-bottom: 16px;
     }
     font-weight: bold;
-    font-size: 6.81vh;
+    font-size: 6vh;
     line-height: .8;
     color: #0088C4;
-    margin-bottom: 3.63vh;
+    margin-bottom: 1.6vh;
     text-transform: uppercase;
+  }
+
+  &__present-img {
+    @include lg-block {
+      margin-top: -30px;
+      margin-bottom: -40px;
+    }
+    margin-top: -2vh;
+    margin-bottom: -2vh;
+    margin-left: -24px;
+    max-width: 450px;
+    width: 100%;
+    max-height: 320px;
+
+    & img {
+      max-width: 100%;
+      max-height: 100%;
+    }
   }
 
   &__product-name {
     @include md-block {
       font-size: 50px;
       line-height: 1;
-      margin-bottom: 32px;
+      margin-bottom: 10px;
     }
     font-weight: bold;
-    font-size: 6.81vh;
+    font-size: 6vh;
     line-height: .8;
     color: #8FC043;
-    margin-bottom: 7.26vh;
+    margin-bottom: 1vh;
     text-transform: uppercase;
   }
 
@@ -80,13 +101,13 @@
     @include md-block {
       font-size: 28px;
       line-height: 1;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
     font-weight: bold;
-    font-size: 3.63vh;
+    font-size: 3.2vh;
     line-height: .8;
     color: #0088C4;
-    margin-bottom: 3.63vh;
+    margin-bottom: 1.6vh;
     text-transform: uppercase;
   }
 
@@ -99,7 +120,7 @@
     font-size: 5.22vh;
     line-height: .8;
     color: #F45576;
-    margin-bottom: 7.26vh;
+    margin-bottom: 4vh;
     text-transform: uppercase;
 
     &-value {
@@ -129,11 +150,6 @@
     margin-left: -6.83vw;
   }
 
-  &__button {
-
-  }
-
-
   & .container {
     @include lg-block {
       height: auto;
@@ -146,11 +162,24 @@
         }
         content: "";
         position: absolute;
+        left: 0;
+        top: 30vh;
+        width: 7.9vw;
+        height: 18.18vh;
+        background: url("../img/page0/decor-left.png") no-repeat center right;
+        background-size: contain;
+      }
+      &:after {
+        @include lg-block {
+          content: none;
+        }
+        content: "";
+        position: absolute;
         right: 0;
-        top: 15.66vh;
-        width: 21.35vw;
-        height: 21.79vh;
-        background: url("../img/page0/decor-right.png") no-repeat center right;
+        top: 64.66vh;
+        width: 11.45vw;
+        height: 12.88vh;
+        background: url("../img/page0/decor-right-mini.png") no-repeat center right;
         background-size: contain;
       }
     }
@@ -178,7 +207,7 @@
   }
 
   & .content {
-    margin-top: 7.26vh;
+    margin-top: 6.4vh;
     @include lg-block {
       margin-top: 0;
       padding-top: 24px;
@@ -207,6 +236,7 @@
     @include lg-block {
       max-height: initial;
       box-sizing: border-box;
+      height: auto;
     }
   }
 
